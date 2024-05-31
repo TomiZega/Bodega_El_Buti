@@ -14,6 +14,16 @@ public class Varietal {
 
     private String descripcion;
 
+    private Integer porcentajeComposicion;
+
+    public Integer getPorcentajeComposicion() {
+        return porcentajeComposicion;
+    }
+
+    public void setPorcentajeComposicion(Integer porcentajeComposicion) {
+        this.porcentajeComposicion = porcentajeComposicion;
+    }
+
     public Integer getIdVarietal() {
         return idVarietal;
     }

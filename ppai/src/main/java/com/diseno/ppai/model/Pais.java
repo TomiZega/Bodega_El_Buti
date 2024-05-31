@@ -2,10 +2,13 @@ package com.diseno.ppai.model;
 
 import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class Pais {
@@ -14,7 +17,8 @@ public class Pais {
     private Integer idPais;
     
     private String nombre;
-
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "pais_id")  
     private List<Provincia> provincias;
 
     public Integer getIdPais() {

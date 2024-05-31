@@ -16,7 +16,7 @@ public class Resena {
     private Integer idResena;
 
     @ManyToOne
-    @JoinColumn(name="idVino", nullable=false)
+    @JoinColumn(name="idVino", referencedColumnName = "idVino" , nullable=false)
     private Vino vino;
     private String comentario;
     private Boolean esPremium;

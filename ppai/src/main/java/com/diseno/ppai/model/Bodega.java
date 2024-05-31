@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Bodega {
@@ -18,6 +19,7 @@ public class Bodega {
     private Integer coordenadasUbicacion;
     private String periodoActualizacion;
     
+    @ManyToOne
     private RegionVitivinicola region;
 
     public String getDescripcion() {
