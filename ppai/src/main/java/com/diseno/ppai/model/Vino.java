@@ -3,7 +3,7 @@ package com.diseno.ppai.model;
 import java.util.Date;
 import java.util.List;
 
-import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,12 +23,12 @@ public class Vino {
     private String imagen;
     private Float precio;
     private Float notaDeCataDeBodega;
-
-    @ManyToOne
     private Bodega bodega;
 
     @ManyToOne
     private Varietal varietal;
+
+
 
     @OneToMany(mappedBy = "vino", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Resena> resenas;
@@ -87,5 +87,12 @@ public class Vino {
     public void setResenas(List<Resena> resenas) {
         this.resenas = resenas;
     }
-    
+
+    public boolean tieneResena() {
+        return resenas != null && !resenas.isEmpty();
+    }
+
+    public String mostrarDatosDelVino(){
+        return getNombre() + getPrecio().toString();
+    }
 }
