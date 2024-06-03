@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GestorService } from './services/gestor.service';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +9,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'ppai_front';
 
-
-  habilitarPantalla(){}
-  solicitarFechasDesdeHasta(){}
-  tomarSelecFechasDesdeHasta(){}
-  solicitarTipoResena(){}
-  tomarTipoResena(){}
-  solicitarFormaVisualizacion(){}
-  tomarSelecVisualizacion(){}
-  solicitarConfirmacion(){}
-  tomarConfirmacion(){}
-  informarGeneracionExitosa(){};
-  downloadExcel(){}
 }

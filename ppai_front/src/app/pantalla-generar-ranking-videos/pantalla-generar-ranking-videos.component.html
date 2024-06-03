@@ -1,1 +1,49 @@
-<p>pantalla-generar-ranking-videos works!</p>
+<div>
+    <header *ngIf="!pantallaHabilitada">
+      <nav>
+        <span>Vinos</span>
+        <button (click)="selecGenerarRankingVinos()">Generar Ranking Vinos</button>
+      </nav>
+    </header>
+  
+    <div *ngIf="pantallaHabilitada">
+      <div *ngIf="seccionFechas && !seccionTipoResena">
+        <h3>Seleccionar Fechas</h3>
+        <div>
+            <label for="fechaDesde">Fecha Desde:</label>
+            <input id="fechaDesde" type="date" [(ngModel)]="fechaDesde">
+        </div>
+        <br>
+        <div>
+            <label for="fechaHasta">Fecha Hasta:</label>
+            <input id="fechaHasta" type="date" [(ngModel)]="fechaHasta">
+        </div>
+        <div>
+            <button (click)="tomarSelecFechasDesdeHasta()">Enviar Fechas</button>
+        </div>
+      </div>
+  
+      <div *ngIf="seccionTipoResena && !seccionFormaVisualizacion">
+        <h3>Seleccionar Tipo de Reseña</h3>
+        <label for="tipoResena">Tipo de Reseña:</label>
+        <select id="tipoResena" [(ngModel)]="tipoResena">
+          <option *ngFor="let tipo of tiposResenas" [value]="tipo">{{ tipo }}</option>
+        </select>
+        <button (click)="tomarTipoResena()">Enviar Tipo de Reseña</button>
+      </div>
+  
+      <div *ngIf="seccionFormaVisualizacion && !seccionConfirmacion">
+        <h3>Seleccionar Forma de Visualización</h3>
+        <label for="tipoVisualizacion">Forma de Visualización:</label>
+        <select id="tipoVisualizacion" [(ngModel)]="tipoVisualizacion">
+          <option *ngFor="let tipo of tiposVisualizacion" [value]="tipo">{{ tipo }}</option>
+        </select>
+        <button (click)="tomarSelecFormaVisualizacion()">Enviar Forma de Visualización</button>
+      </div>
+  
+      <div *ngIf="seccionConfirmacion && seccionFormaVisualizacion">
+        <button (click)="tomarConfirmacion()">Confirmar</button>
+      </div>
+    </div>
+  </div>
+  

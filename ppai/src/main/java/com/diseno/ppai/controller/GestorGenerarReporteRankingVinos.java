@@ -36,13 +36,11 @@ import jakarta.annotation.PostConstruct;
 public class GestorGenerarReporteRankingVinos {
     private Date fechaInicio;
     private Date fechaFin;
-    private List<String> tiposResenas = Arrays.asList("Reseñas normales", "Reseñas de Sommelier", "Reseñas de Amigos");
     private String tipoResenaSelec;
-    private List<String> tipoVisualizacion = Arrays.asList("Excel", "PDF", "En pantalla");
     private String tipoVisualizacionSelec;
     private List<Vino> vinos;
-    private List<Vino> vinosConResenasValidas;
-    private List<Resena> resenasValidas;
+    private List<Vino> vinosConResenasValidas = new ArrayList<Vino>();
+    private List<Resena> resenasValidas = new ArrayList<Resena>();
 
     @Autowired
     private VinoRepository vinoRepository;
@@ -51,15 +49,22 @@ public class GestorGenerarReporteRankingVinos {
     public void init() {
         this.vinos = vinoRepository.findAll();
     }
-
-    // 5
+    //5
     @PostMapping(path = "fechas-rango")
-    public void tomarFechasDesdeHasta(
-            @RequestParam("fechaDesde") @DateTimeFormat(pattern = "dd-MM-yyyy") Date fechaDesde,
-            @RequestParam("fechaHasta") @DateTimeFormat(pattern = "dd-MM-yyyy") Date fechaHasta) {
-        this.fechaInicio = fechaDesde;
-        this.fechaFin = fechaHasta;
-        validarPeriodoCorrecto(fechaDesde, fechaHasta);
+    public ResponseEntity<String> tomarFechasDesdeHasta(
+            @RequestParam("fechaDesde") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaDesde,
+            @RequestParam("fechaHasta") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaHasta) {
+        try {
+            this.fechaInicio = fechaDesde;
+            this.fechaFin = fechaHasta;
+            if(validarPeriodoCorrecto(fechaDesde, fechaHasta)){
+                return ResponseEntity.ok("Fecha valida");
+            }else{
+                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("periodo incorrecto");
+            }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Fecha inválida");
+        }
     }
 
     // 10
@@ -74,9 +79,18 @@ public class GestorGenerarReporteRankingVinos {
         this.tipoVisualizacionSelec = tipoVisualizacion;
     }
 
-    // 2
-    public void generarRankingVinos() {
+    @GetMapping("generar-ranking-vinos")
+    public ResponseEntity<String> generarRankingVinos() {
+        try {    
+            // Return success response
+            return ResponseEntity.ok("Ranking generated successfully");
+        } catch (Exception e) {
+            // Log the error and return a failure response
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to generate ranking");
+        }
     }
+    
 
     // 7
     public boolean validarPeriodoCorrecto(Date fecha1, Date fecha2) {
@@ -145,10 +159,10 @@ public class GestorGenerarReporteRankingVinos {
 
     public byte[] generarReporte() {
         try (Workbook workbook = new XSSFWorkbook();
-                FileOutputStream fileOut = new FileOutputStream("RankingVinos.xlsx")) {
-
+             ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+    
             Sheet sheet = workbook.createSheet("Ranking Vinos");
-
+    
             // Create header row
             Row headerRow = sheet.createRow(0);
             String[] headers = { "Nombre", "Precio", "Calificación", "Porcentaje Composición", "Región", "Provincia",
@@ -157,14 +171,14 @@ public class GestorGenerarReporteRankingVinos {
                 Cell cell = headerRow.createCell(i);
                 cell.setCellValue(headers[i]);
             }
-
+    
             // Fill data rows
             int rowNum = 1;
-            for (Vino vino : vinosConResenasValidas) {
+            for (Vino vino : this.vinosConResenasValidas) {
                 Row row = sheet.createRow(rowNum++);
                 String[] datosVino = vino.mostrarDatosDelVino().split(",");
                 String[] ubicacionVino = vino.mostrarUbicacionVino().split(",");
-
+    
                 for (int i = 0; i < datosVino.length; i++) {
                     row.createCell(i).setCellValue(datosVino[i]);
                 }
@@ -172,20 +186,21 @@ public class GestorGenerarReporteRankingVinos {
                     row.createCell(datosVino.length + i).setCellValue(ubicacionVino[i]);
                 }
             }
-
+    
             // Adjust column width
             for (int i = 0; i < headers.length; i++) {
                 sheet.autoSizeColumn(i);
             }
-
-            // Write the output to the file
-            workbook.write(fileOut);
-            return new byte[0]; // Or return some indicator of success if needed
+    
+            // Write the workbook data to ByteArrayOutputStream
+            workbook.write(out);
+            return out.toByteArray();
         } catch (IOException e) {
             e.printStackTrace();
             return new byte[0];
         }
     }
+    
 
     public void finCU() {
     }
