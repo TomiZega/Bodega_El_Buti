@@ -67,5 +67,11 @@ public class Resena {
     public boolean esFechaValida(Date fechaInicio, Date fechaFin) {
         return fechaResenia != null && !fechaResenia.before(fechaInicio) && !fechaResenia.after(fechaFin);
     }
+    @Override
+    public String toString() {
+        return "Resena [idResena=" + idResena + ", vino=" + vino + ", comentario=" + comentario + ", esPremium="
+                + esPremium + ", fechaResenia=" + fechaResenia + ", puntaje=" + puntaje + "]";
+    }
    
+    
 }

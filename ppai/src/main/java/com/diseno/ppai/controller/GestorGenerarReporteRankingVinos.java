@@ -10,6 +10,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
@@ -24,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.xssf.usermodel.*;
 
 import com.diseno.ppai.model.Resena;
@@ -126,8 +128,10 @@ public class GestorGenerarReporteRankingVinos {
     // 19
     public byte[] calificarVinos() {
         vinos.forEach(vino -> {
+            System.out.println("Vino: "+vino.toString());
             if (vino.tieneResena()) {
                 vino.getResenas().forEach(resena -> {
+                    System.out.println("Resena: "+resena.toString());
                     if (resena.esFechaValida(fechaInicio, fechaFin) && resena.sosDeSommelier()) {
                         resenasValidas.add(resena);
                         if (!vinosConResenasValidas.contains(vino)) {
@@ -158,48 +162,53 @@ public class GestorGenerarReporteRankingVinos {
     }
 
     public byte[] generarReporte() {
-        try (Workbook workbook = new XSSFWorkbook();
-             ByteArrayOutputStream out = new ByteArrayOutputStream()) {
-    
-            Sheet sheet = workbook.createSheet("Ranking Vinos");
-    
-            // Create header row
-            Row headerRow = sheet.createRow(0);
-            String[] headers = { "Nombre", "Precio", "Calificación", "Porcentaje Composición", "Región", "Provincia",
-                    "País" };
-            for (int i = 0; i < headers.length; i++) {
-                Cell cell = headerRow.createCell(i);
-                cell.setCellValue(headers[i]);
-            }
-    
-            // Fill data rows
-            int rowNum = 1;
-            for (Vino vino : this.vinosConResenasValidas) {
-                Row row = sheet.createRow(rowNum++);
-                String[] datosVino = vino.mostrarDatosDelVino().split(",");
-                String[] ubicacionVino = vino.mostrarUbicacionVino().split(",");
-    
-                for (int i = 0; i < datosVino.length; i++) {
-                    row.createCell(i).setCellValue(datosVino[i]);
-                }
-                for (int i = 0; i < ubicacionVino.length; i++) {
-                    row.createCell(datosVino.length + i).setCellValue(ubicacionVino[i]);
-                }
-            }
-    
-            // Adjust column width
-            for (int i = 0; i < headers.length; i++) {
-                sheet.autoSizeColumn(i);
-            }
-    
-            // Write the workbook data to ByteArrayOutputStream
-            workbook.write(out);
-            return out.toByteArray();
-        } catch (IOException e) {
-            e.printStackTrace();
-            return new byte[0];
+    try (Workbook workbook = new XSSFWorkbook(); ByteArrayOutputStream out = new ByteArrayOutputStream()) {
+
+        Sheet sheet = workbook.createSheet("Ranking Vinos");
+
+        // Create header row
+        Row headerRow = sheet.createRow(0);
+        String[] headers = { "Nombre", "Precio", "Calificación", "Porcentaje Composición", "Región", "Provincia",
+                "País" };
+        for (int i = 0; i < headers.length; i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(headers[i]);
         }
+
+        // Fill data rows with random values
+        int rowNum = 1;
+        Random random = new Random();
+        for (int i = 0; i < 10; i++) {
+            Row row = sheet.createRow(rowNum++);
+            // Generate random values for each column
+            row.createCell(0).setCellValue("Vino " + rowNum); // Nombre
+            row.createCell(1).setCellValue(Math.random() * 500); // Precio
+            row.createCell(2).setCellValue((random.nextInt(10) + 1)); // Calificacion
+            row.createCell(3).setCellValue(Math.random() * 100); // Porcentaje Composicion
+            row.createCell(4).setCellValue("Region " + (int) (Math.random() * 5)); // Region
+            row.createCell(5).setCellValue("Provincia " + (int) (Math.random() * 3)); // Provincia
+            row.createCell(6).setCellValue("Pais " + (int) (Math.random() * 2)); // Pais
+        }
+    // Determine the range of cells to apply the auto-filter
+    CellRangeAddress range = new CellRangeAddress(0, rowNum - 1, 0, 7 - 1);
+
+    // Apply the auto-filter to the specified range
+    sheet.setAutoFilter(range);
+
+        // Adjust column width
+        for (int i = 0; i < headers.length; i++) {
+            sheet.autoSizeColumn(i);
+        }
+
+        // Write the workbook data to ByteArrayOutputStream
+        workbook.write(out);
+        return out.toByteArray();
+    } catch (IOException e) {
+        e.printStackTrace();
+        return new byte[0];
     }
+}
+    
     
 
     public void finCU() {

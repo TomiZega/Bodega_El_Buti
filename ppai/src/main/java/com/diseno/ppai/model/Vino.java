@@ -170,4 +170,14 @@ public class Vino {
         return (float) sum / listaPuntajes.size();
     }
 
+    @Override
+    public String toString() {
+        return "Vino [idVino=" + idVino + ", nombre=" + nombre + ", aniada=" + aniada + ", fechaActualizacion="
+                + fechaActualizacion + ", imagen=" + imagen + ", precio=" + precio + ", notaDeCataDeBodega="
+                + notaDeCataDeBodega + ", bodega=" + bodega + ", varietal=" + varietal + ", resenas=" + resenas
+                + ", promedioPuntaje=" + promedioPuntaje + "]";
+    }
+
+
+    
 }
