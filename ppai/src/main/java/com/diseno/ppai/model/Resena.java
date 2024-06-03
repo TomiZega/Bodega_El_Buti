@@ -59,5 +59,13 @@ public class Resena {
     public void setIdResena(Integer idResena) {
         this.idResena = idResena;
     }
+
+    public boolean sosDeSommelier(){
+        return esPremium;
+    }
+
+    public boolean esFechaValida(Date fechaInicio, Date fechaFin) {
+        return fechaResenia != null && !fechaResenia.before(fechaInicio) && !fechaResenia.after(fechaFin);
+    }
    
 }

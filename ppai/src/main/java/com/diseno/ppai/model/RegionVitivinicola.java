@@ -1,9 +1,14 @@
 package com.diseno.ppai.model;
 
+import java.util.List;
+
+import com.diseno.ppai.repository.ProvinciaRepository;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 
 @Entity
 public class RegionVitivinicola {
@@ -26,6 +31,19 @@ public class RegionVitivinicola {
     }
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    @Transient
+    private ProvinciaRepository provinciaRepository;
+
+    public Provincia obtProvincia() {
+        List<Provincia> provincias = provinciaRepository.findAll();
+        for (Provincia provincia : provincias) {
+            if (provincia.esDeRegion(this)) {
+                return provincia;
+            }
+        }
+        return null;
     }
 
     

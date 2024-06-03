@@ -15,10 +15,10 @@ public class Pais {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer idPais;
-    
+
     private String nombre;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "pais_id")  
+    @JoinColumn(name = "pais_id")
     private List<Provincia> provincias;
 
     public Integer getIdPais() {
@@ -45,5 +45,8 @@ public class Pais {
         this.provincias = provincias;
     }
 
-    
+
+    public boolean esDeProvincia(Provincia provincia){
+        return provincias.contains(provincia);
+    }
 }
