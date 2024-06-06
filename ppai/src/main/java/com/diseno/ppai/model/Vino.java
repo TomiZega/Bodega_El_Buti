@@ -6,6 +6,7 @@ import java.util.List;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -31,7 +32,7 @@ public class Vino {
     @ManyToOne
     private Varietal varietal;
 
-    @OneToMany(mappedBy = "vino", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "vino", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private List<Resena> resenas;
 
     @Transient
@@ -109,6 +110,7 @@ public class Vino {
         this.resenas = resenas;
     }
 
+    // 19
     public boolean tieneResena() {
         return resenas != null && !resenas.isEmpty();
     }
@@ -136,7 +138,7 @@ public class Vino {
     // 23
     public String mostrarDatosDelVino() {
         return getNombre() + "," + getPrecio().toString() + ","
-                + getCalificacionGeneral().toString()+"," + this.varietal.getPorcentajeComposicion();
+                + getCalificacionGeneral().toString() + "," + this.varietal.getPorcentajeComposicion();
     }
 
     // 26
@@ -147,8 +149,8 @@ public class Vino {
                 + region.obtProvincia().obtPais().getNombre();
     }
 
-    // 34
-    public Float getPuntaje(List<Resena> resenasValidas) {
+    // 22
+    public Float mostrarPuntajeAcumulado(List<Resena> resenasValidas) {
         List<Integer> listaPuntajes = new ArrayList<Integer>();
         resenasValidas.forEach(resena -> {
             listaPuntajes.add(resena.getPuntaje());
@@ -161,23 +163,10 @@ public class Vino {
         if (listaPuntajes == null || listaPuntajes.isEmpty()) {
             return 0.0f;
         }
-
         int sum = 0;
         for (Integer puntaje : listaPuntajes) {
             sum += puntaje;
         }
-
         return (float) sum / listaPuntajes.size();
     }
-
-    @Override
-    public String toString() {
-        return "Vino [idVino=" + idVino + ", nombre=" + nombre + ", aniada=" + aniada + ", fechaActualizacion="
-                + fechaActualizacion + ", imagen=" + imagen + ", precio=" + precio + ", notaDeCataDeBodega="
-                + notaDeCataDeBodega + ", bodega=" + bodega + ", varietal=" + varietal + ", resenas=" + resenas
-                + ", promedioPuntaje=" + promedioPuntaje + "]";
-    }
-
-
-    
 }

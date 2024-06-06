@@ -2,6 +2,8 @@ package com.diseno.ppai.model;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.diseno.ppai.repository.ProvinciaRepository;
 
 import jakarta.persistence.Entity;
@@ -34,6 +36,7 @@ public class RegionVitivinicola {
     }
 
     @Transient
+    @Autowired
     private ProvinciaRepository provinciaRepository;
 
     public Provincia obtProvincia() {

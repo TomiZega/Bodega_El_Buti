@@ -1,0 +1,114 @@
+INSERT INTO PAIS (id_pais, nombre) VALUES (0, 'Argentina');
+INSERT INTO PAIS (id_pais, nombre) VALUES (1, 'Chile');
+INSERT INTO PAIS (id_pais, nombre) VALUES (2, 'Uruguay');
+INSERT INTO PAIS (id_pais, nombre) VALUES (3, 'Brasil');
+
+INSERT INTO PROVINCIA (id_provincia, pais_id, nombre) VALUES (0, 0, 'Cordoba');
+INSERT INTO PROVINCIA (id_provincia, pais_id, nombre) VALUES (1, 0, 'Mendoza');
+INSERT INTO PROVINCIA (id_provincia, pais_id, nombre) VALUES (2, 0, 'San Juan');
+INSERT INTO PROVINCIA (id_provincia, pais_id, nombre) VALUES (3, 1, 'Concepcion');
+INSERT INTO PROVINCIA (id_provincia, pais_id, nombre) VALUES (4, 1, 'Santiago');
+INSERT INTO PROVINCIA (id_provincia, pais_id, nombre) VALUES (5, 3, 'Sao Paulo');
+INSERT INTO PROVINCIA (id_provincia, pais_id, nombre) VALUES (6, 2, 'Montevideo');
+INSERT INTO PROVINCIA (id_provincia, pais_id, nombre) VALUES (7, 2, 'Canelones');
+
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (0, 0, 'Region de pampa seca de cordoba', 'Pampa Seca');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (1, 1, 'Region de viñedos de mendoza', 'Viñedos de Mendoza');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (2, 2, 'Region andina de san juan', 'Andina de San Juan');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (3, 3, 'Region vitivinicola de concepcion', 'Vitivinicola de Concepcion');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (4, 4, 'Region del valle de santiago', 'Valle de Santiago');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (5, 5, 'Region de los viñedos de sao paulo', 'Viñedos de Sao Paulo');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (6, 6, 'Region vinicola de montevideo', 'Vinicola de Montevideo');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (7, 7, 'Region vinicola de canelones', 'Vinicola de Canelones');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (8, 1, 'Region de maipu en mendoza', 'Maipú en Mendoza');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (9, 1, 'Region de valle de uco en mendoza', 'Valle de Uco en Mendoza');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (10, 4, 'Region del casablanca en santiago', 'Casablanca en Santiago');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (11, 4, 'Region del maipo en santiago', 'Maipo en Santiago');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (12, 3, 'Region del itata en concepcion', 'Itata en Concepcion');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (13, 2, 'Region de maldonado en uruguay', 'Maldonado en Uruguay');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (14, 2, 'Region de colonia en uruguay', 'Colonia en Uruguay');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (15, 3, 'Region de campinas en sao paulo', 'Campinas en Sao Paulo');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (16, 0, 'Region del valle de calamuchita en cordoba', 'Valle de Calamuchita en Córdoba');
+INSERT INTO REGION_VITIVINICOLA (id_region, provincia_id, descripcion, nombre) VALUES (17, 0, 'Region de traslasierra en cordoba', 'Traslasierra en Córdoba');
+
+
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (0,100,'Malbec 100%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (1,100,'Cabernet Sauvignon 100%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (2,100,'Merlot 100%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (3,100,'Syrah 100%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (4,100,'Chardonnay 100%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (5,100,'Sauvignon Blanc 100%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (6,75,'Malbec 75% - Cabernet Sauvignon 25%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (7,50,'Merlot 50% - Syrah 50%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (8,80,'Chardonnay 80% - Sauvignon Blanc 20%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (9,90,'Cabernet Sauvignon 90% - Merlot 10%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (10,85,'Syrah 85% - Malbec 15%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (11,70,'Sauvignon Blanc 70% - Chardonnay 30%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (12,60,'Malbec 60% - Merlot 40%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (13,95,'Chardonnay 95% - Viognier 5%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (14,100,'Pinot Noir 100%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (15,90,'Pinot Noir 90% - Chardonnay 10%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (16,80,'Cabernet Franc 80% - Merlot 20%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (17,75,'Tempranillo 75% - Grenache 25%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (18,100,'Zinfandel 100%');
+INSERT INTO VARIETAL (id_varietal, porcentaje_composicion, descripcion) VALUES (19,50,'Grenache 50% - Syrah 50%');
+
+
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (3456, 0, 0, 'Bodega en el corazón de la Pampa Seca', 'Fundada en 1900 por inmigrantes italianos', 'Bodega Pampa Seca', '2023-06-01');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (6789, 1, 1, 'Bodega en los viñedos de Mendoza', 'Establecida en 1925, famosa por su Malbec', 'Bodega Mendoza Malbec', '2023-07-15');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (1234, 2, 2, 'Bodega en las alturas de San Juan', 'Con una tradición de más de 80 años', 'Bodega Andina', '2023-08-30');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (5678, 3, 3, 'Bodega en la región vitivinícola de Concepcion', 'Pequeña bodega familiar fundada en 1950', 'Bodega Concepcion', '2023-05-20');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (9101, 4, 4, 'Bodega en el valle de Santiago', 'Innovadora y moderna, establecida en 2000', 'Bodega Valle de Santiago', '2023-06-25');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (1121, 5, 5, 'Bodega en los viñedos de Sao Paulo', 'Conocida por su excelente Syrah', 'Bodega Sao Paulo', '2023-09-10');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (3141, 6, 6, 'Bodega en la región vinícola de Montevideo', 'Producción limitada y de alta calidad', 'Bodega Montevideo', '2023-04-18');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (5161, 7, 7, 'Bodega en la región vinícola de Canelones', 'Famosa por sus vinos blancos', 'Bodega Canelones Blancos', '2023-10-05');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (7181, 8, 8, 'Bodega en Maipú, Mendoza', 'Una de las bodegas más antiguas de la región', 'Bodega Maipú', '2023-03-12');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (9202, 9, 9, 'Bodega en el Valle de Uco, Mendoza', 'Destacada por sus vinos premium', 'Bodega Valle de Uco', '2023-08-01');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (1223, 10, 10, 'Bodega en Casablanca, Santiago', 'Moderna bodega con tecnología avanzada', 'Bodega Casablanca', '2023-11-22');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (3243, 11, 11, 'Bodega en el Maipo, Santiago', 'Famosa por su Cabernet Sauvignon', 'Bodega Maipo', '2023-07-07');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (5264, 12, 12, 'Bodega en Itata, Concepcion', 'Pequeña bodega artesanal', 'Bodega Itata', '2023-09-30');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (7285, 13, 13, 'Bodega en Maldonado, Uruguay', 'Bodega con vistas al océano', 'Bodega Maldonado', '2023-06-16');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (9306, 14, 14, 'Bodega en Colonia, Uruguay', 'Famosa por su Tannat', 'Bodega Colonia', '2023-05-05');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (1327, 15, 15, 'Bodega en Campinas, Sao Paulo', 'Conocida por sus espumantes', 'Bodega Campinas', '2023-12-01');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (3348, 16, 16, 'Bodega en Valle de Calamuchita, Córdoba', 'Bodega de estilo boutique', 'Bodega Calamuchita', '2023-11-11');
+INSERT INTO BODEGA (coordenadas_ubicacion, id_bodega, region_id_region, descripcion, historia, nombre, periodo_actualizacion) VALUES (5369, 17, 17, 'Bodega en Traslasierra, Córdoba', 'Productora de vinos orgánicos', 'Bodega Traslasierra', '2023-10-20');
+
+
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (0, 0, 92.5, 15.99, 0, '2018-04-01 00:00:00', '2023-06-01 00:00:00', 'malbec_pampa_seca.png', 'Malbec Pampa Seca');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (1, 1, 95.0, 20.99, 1, '2019-06-15 00:00:00', '2023-07-15 00:00:00', 'cabernet_mendoza.png', 'Cabernet Sauvignon Mendoza');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (2, 2, 88.0, 18.50, 2, '2017-09-10 00:00:00', '2023-08-30 00:00:00', 'merlot_andina.png', 'Merlot Andina');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (3, 3, 90.5, 16.75, 3, '2020-03-20 00:00:00', '2023-05-20 00:00:00', 'syrah_concepcion.png', 'Syrah Concepcion');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (4, 4, 93.0, 19.99, 4, '2018-11-05 00:00:00', '2023-06-25 00:00:00', 'chardonnay_valle_santiago.png', 'Chardonnay Valle de Santiago');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (5, 5, 89.5, 14.99, 5, '2019-08-25 00:00:00', '2023-09-10 00:00:00', 'sauvignon_sao_paulo.png', 'Sauvignon Blanc Sao Paulo');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (6, 6, 91.0, 22.50, 6, '2018-05-14 00:00:00', '2023-04-18 00:00:00', 'blend_montevideo.png', 'Blend Montevideo');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (7, 7, 87.0, 17.00, 7, '2020-07-30 00:00:00', '2023-10-05 00:00:00', 'blend_canelones.png', 'Blend Canelones');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (8, 8, 94.5, 21.75, 8, '2017-03-10 00:00:00', '2023-03-12 00:00:00', 'chardonnay_maipu.png', 'Chardonnay Maipú');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (9, 9, 96.0, 23.99, 9, '2018-12-15 00:00:00', '2023-08-01 00:00:00', 'cabernet_valle_uco.png', 'Cabernet Valle de Uco');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (10, 10, 89.0, 18.99, 10, '2019-06-25 00:00:00', '2023-11-22 00:00:00', 'blend_casablanca.png', 'Blend Casablanca');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (11, 11, 92.0, 20.50, 11, '2017-09-14 00:00:00', '2023-07-07 00:00:00', 'cabernet_maipo.png', 'Cabernet Maipo');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (12, 12, 85.5, 13.50, 12, '2020-02-18 00:00:00', '2023-09-30 00:00:00', 'blend_itata.png', 'Blend Itata');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (13, 13, 93.5, 19.50, 13, '2018-11-01 00:00:00', '2023-06-16 00:00:00', 'blend_maldonado.png', 'Blend Maldonado');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (14, 14, 90.0, 18.25, 14, '2019-07-20 00:00:00', '2023-05-05 00:00:00', 'tannat_colonia.png', 'Tannat Colonia');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (15, 15, 88.5, 15.75, 15, '2020-08-18 00:00:00', '2023-12-01 00:00:00', 'espumante_campinas.png', 'Espumante Campinas');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre) VALUES (16, 16, 95.0, 22.00, 16, '2017-04-22 00:00:00', '2023-11-11 00:00:00', 'blend_calamuchita.png', 'Blend Calamuchita');
+INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, varietal_id_varietal, aniada, fecha_actualizacion, imagen, nombre)VALUES (17, 17, 87.5, 16.50, 17, '2018-10-14 00:00:00', '2023-10-20 00:00:00', 'blend_traslasierra.png', 'Blend Traslasierra');
+
+
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 0, 0, 95, '2024-06-10 00:00:00', 'Excellent Malbec with rich flavors and smooth finish.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 1, 1, 90, '2024-07-20 00:00:00', 'Great value Cabernet Sauvignon, perfect with red meat.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 2, 2, 85, '2024-08-15 00:00:00', 'Smooth Merlot with hints of berries and chocolate.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 3, 3, 88, '2024-05-22 00:00:00', 'Syrah with a bold taste and pleasant aftertaste.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 4, 4, 93, '2024-06-30 00:00:00', 'Chardonnay with a crisp and refreshing flavor.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 5, 5, 89, '2024-09-12 00:00:00', 'Nice Sauvignon Blanc with citrus notes.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 6, 6, 91, '2024-04-25 00:00:00', 'Blend with a perfect balance of flavors.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 7, 7, 86, '2024-10-10 00:00:00', 'Good blend, slightly tannic with a nice finish.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 8, 8, 92, '2024-03-15 00:00:00', 'Chardonnay with a delightful aroma and flavor.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 9, 9, 96, '2024-08-05 00:00:00', 'Outstanding Cabernet, one of the best in the region.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 10, 10, 88, '2024-11-10 00:00:00', 'Nice blend with a smooth and rich taste.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 11, 11, 91, '2024-07-22 00:00:00', 'Cabernet with robust flavors and excellent quality.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 12, 12, 84, '2024-09-05 00:00:00', 'Blend with a nice taste, a bit dry but pleasant.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 13, 13, 90, '2024-06-18 00:00:00', 'Well-balanced blend with fruity notes.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 14, 14, 89, '2024-05-12 00:00:00', 'Tannat with a strong character and rich taste.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 15, 15, 87, '2024-12-20 00:00:00', 'Refreshing espumante with fine bubbles.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 16, 16, 95, '2024-11-15 00:00:00', 'Blend with exceptional quality and taste.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 17, 17, 86, '2024-10-22 00:00:00', 'Nice blend, a bit tannic but enjoyable.');
