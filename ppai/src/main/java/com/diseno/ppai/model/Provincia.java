@@ -1,5 +1,9 @@
 package com.diseno.ppai.model;
 
+import java.util.List;
+
+import com.diseno.ppai.repository.PaisRepositoryHolder;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,11 +11,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
-import jakarta.persistence.Transient;
-
-import java.util.List;
-
-import com.diseno.ppai.repository.PaisRepository;
 
 @Entity
 public class Provincia {
@@ -50,12 +49,16 @@ public class Provincia {
     }
 
     public boolean esDeRegion(RegionVitivinicola region){
-        return regiones.contains(region);
+        for (RegionVitivinicola regionVitivinicola : regiones) {
+            if (region.equals(regionVitivinicola)){
+                return true;
+            }
+        }
+        return false;
     }
 
-    @Transient PaisRepository paisRepository;
-    public Pais obtPais(){
-        List<Pais> paises = paisRepository.findAll();
+    public Pais obtPais( ){
+        List<Pais> paises = PaisRepositoryHolder.getPaisRepository().findAll();
         for (Pais pais : paises) {
             if (pais.esDeProvincia(this)) {
                 return pais;

@@ -2,16 +2,18 @@ package com.diseno.ppai.controller;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
-import java.util.Random;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.InputStreamResource;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -24,9 +26,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.ss.util.CellRangeAddress;
-import org.apache.poi.xssf.usermodel.*;
 
 import com.diseno.ppai.model.Resena;
 import com.diseno.ppai.model.Vino;
@@ -102,7 +101,7 @@ public class GestorGenerarReporteRankingVinos {
     @GetMapping("/calificar-vinos")
     public ResponseEntity<InputStreamResource> tomarConfirmacion() {
         byte[] reportBytes = calificarVinos();
-        if(this.tipoVisualizacionSelec =="Excel"){
+        if(this.tipoVisualizacionSelec =="Excel" && this.tipoResenaSelec!= null){
             // Send the generated file as a response
             try {
                 // Convert report content to InputStreamResource
@@ -181,7 +180,7 @@ public class GestorGenerarReporteRankingVinos {
                 Row row = sheet.createRow(rowNum++);
                 String[] datosVino = vino.mostrarDatosDelVino().split(",");
                 String[] ubicacionVino = vino.mostrarUbicacionVino().split(",");
-    
+
                 for (int i = 0; i < datosVino.length; i++) {
                     row.createCell(i).setCellValue(datosVino[i]);
                 }

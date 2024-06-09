@@ -95,11 +95,11 @@ INSERT INTO VINO (bodega_id_bodega, id_vino, nota_de_cata_de_bodega, precio, var
 
 
 INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 0, 0, 95, '2024-06-10 00:00:00', 'Excellent Malbec with rich flavors and smooth finish.');
-INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 1, 1, 90, '2024-07-20 00:00:00', 'Great value Cabernet Sauvignon, perfect with red meat.');
-INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 2, 2, 85, '2024-08-15 00:00:00', 'Smooth Merlot with hints of berries and chocolate.');
-INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 3, 3, 88, '2024-05-22 00:00:00', 'Syrah with a bold taste and pleasant aftertaste.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 1, 1, 90, '2024-06-20 00:00:00', 'Great value Cabernet Sauvignon, perfect with red meat.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 2, 2, 85, '2024-06-15 00:00:00', 'Smooth Merlot with hints of berries and chocolate.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 3, 3, 88, '2024-06-22 00:00:00', 'Syrah with a bold taste and pleasant aftertaste.');
 INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 4, 4, 93, '2024-06-30 00:00:00', 'Chardonnay with a crisp and refreshing flavor.');
-INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 5, 5, 89, '2024-09-12 00:00:00', 'Nice Sauvignon Blanc with citrus notes.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 5, 5, 89, '2024-06-12 00:00:00', 'Nice Sauvignon Blanc with citrus notes.');
 INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 6, 6, 91, '2024-04-25 00:00:00', 'Blend with a perfect balance of flavors.');
 INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 7, 7, 86, '2024-10-10 00:00:00', 'Good blend, slightly tannic with a nice finish.');
 INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 8, 8, 92, '2024-03-15 00:00:00', 'Chardonnay with a delightful aroma and flavor.');
@@ -112,3 +112,41 @@ INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, come
 INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 15, 15, 87, '2024-12-20 00:00:00', 'Refreshing espumante with fine bubbles.');
 INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 16, 16, 95, '2024-11-15 00:00:00', 'Blend with exceptional quality and taste.');
 INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (false, 17, 17, 86, '2024-10-22 00:00:00', 'Nice blend, a bit tannic but enjoyable.');
+
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 18, 17, 90, '2024-06-01 00:00:00', 'A delightful blend with balanced acidity and a smooth finish.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 19, 16, 36, '2024-06-03 00:00:00', 'A rich Merlot with deep berry flavors and a velvety texture.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 20, 15, 27, '2024-06-04 00:00:00', 'Sauvignon Blanc with crisp citrus notes and a refreshing finish.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 21, 14, 87, '2024-06-06 00:00:00', 'Pinot Noir with a delicate balance of cherry and oak flavors.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 22, 13, 79, '2024-06-07 00:00:00', 'Chardonnay with a perfect blend of apple and buttery flavors.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 23, 12, 38, '2024-06-08 00:00:00', 'A smooth blend with hints of spice and dark fruits.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 24, 11, 42, '2024-06-09 00:00:00', 'A robust Cabernet Sauvignon with a long, satisfying finish.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 25, 10, 65, '2024-06-11 00:00:00', 'A pleasant Malbec with notes of plum and blackberry.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 26, 9, 20, '2024-06-13 00:00:00', 'Excellent Syrah with bold flavors and a smooth aftertaste.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 27, 8, 89, '2024-06-14 00:00:00', 'Chardonnay with bright citrus and a hint of vanilla.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 28, 7, 80, '2024-06-16 00:00:00', 'A nice blend with a good balance of tannins and fruit.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 29, 6, 90, '2024-06-17 00:00:00', 'A delightful Merlot with rich berry flavors and a smooth finish.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 30, 5, 20, '2024-06-19 00:00:00', 'Sauvignon Blanc with crisp acidity and vibrant fruit flavors.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 31, 4, 15, '2024-06-21 00:00:00', 'A well-rounded Pinot Noir with a silky texture.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 32, 3, 93, '2024-06-23 00:00:00', 'A fantastic Chardonnay with a harmonious balance of fruit and oak.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 33, 2, 95, '2024-06-24 00:00:00', 'A smooth blend with notes of cherry and spice.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 34, 1, 12, '2024-06-26 00:00:00', 'A robust Cabernet Sauvignon with a complex flavor profile.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 35, 0, 60, '2024-06-27 00:00:00', 'A delightful Malbec with rich dark fruit flavors and a smooth finish.');
+
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 36, 0, 55, '2024-06-02 00:00:00', 'Malbec with a complex flavor and smooth tannins.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 37, 1, 73, '2024-06-05 00:00:00', 'A balanced Cabernet with rich fruit flavors.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 38, 2, 68, '2024-06-10 00:00:00', 'Merlot with a hint of vanilla and a smooth finish.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 39, 3, 48, '2024-06-12 00:00:00', 'Syrah with bold flavors and a long finish.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 40, 4, 32, '2024-06-18 00:00:00', 'Chardonnay with a crisp and clean taste.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 41, 5, 19, '2024-06-20 00:00:00', 'Sauvignon Blanc with fresh citrus notes.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 42, 6, 92, '2024-06-25 00:00:00', 'A blend with a harmonious mix of fruit and oak.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 43, 7, 12, '2024-06-28 00:00:00', 'A well-balanced blend with a pleasant finish.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 44, 8, 65, '2024-06-29 00:00:00', 'Chardonnay with a smooth texture and bright acidity.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 45, 9, 41, '2024-06-30 00:00:00', 'An excellent Cabernet with rich, complex flavors.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 46, 10, 68, '2024-06-21 00:00:00', 'A smooth blend with hints of dark fruit and spice.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 47, 11, 79, '2024-06-15 00:00:00', 'A robust Cabernet with a strong finish.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 48, 12, 20, '2024-06-22 00:00:00', 'A blend with a nice balance of flavors and smooth tannins.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 49, 13, 78, '2024-06-19 00:00:00', 'A Chardonnay with bright acidity and a hint of oak.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 50, 14, 65, '2024-06-23 00:00:00', 'A Pinot Noir with delicate flavors and a smooth finish.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 51, 15, 40, '2024-06-26 00:00:00', 'A Sauvignon Blanc with fresh and vibrant flavors.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 52, 16, 50, '2024-06-17 00:00:00', 'A Merlot with rich berry flavors and a hint of spice.');
+INSERT INTO RESENA (es_premium, id_resena, id_vino, puntaje, fecha_resenia, comentario) VALUES (true, 53, 17, 70, '2024-06-24 00:00:00', 'A blend with a good balance of fruit and tannins.');

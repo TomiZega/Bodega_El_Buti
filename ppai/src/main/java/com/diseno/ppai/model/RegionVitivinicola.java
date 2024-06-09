@@ -1,16 +1,14 @@
 package com.diseno.ppai.model;
 
 import java.util.List;
+import java.util.Objects;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-import com.diseno.ppai.repository.ProvinciaRepository;
+import com.diseno.ppai.repository.ProvinciaRepositoryHolder;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.Transient;
 
 @Entity
 public class RegionVitivinicola {
@@ -35,18 +33,29 @@ public class RegionVitivinicola {
         this.nombre = nombre;
     }
 
-    @Transient
-    @Autowired
-    private ProvinciaRepository provinciaRepository;
 
     public Provincia obtProvincia() {
-        List<Provincia> provincias = provinciaRepository.findAll();
+        List<Provincia> provincias = ProvinciaRepositoryHolder.getProvinciaRepository().findAll();
         for (Provincia provincia : provincias) {
             if (provincia.esDeRegion(this)) {
                 return provincia;
             }
         }
         return null;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RegionVitivinicola that = (RegionVitivinicola) o;
+        return Objects.equals(idRegion, that.idRegion) &&
+               Objects.equals(nombre, that.nombre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(idRegion, nombre);
     }
 
     

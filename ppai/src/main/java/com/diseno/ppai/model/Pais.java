@@ -47,6 +47,11 @@ public class Pais {
 
 
     public boolean esDeProvincia(Provincia provincia){
-        return provincias.contains(provincia);
+        for (Provincia provinciaPais : provincias) {
+            if(provincia.getIdProvincia().equals(provinciaPais.getIdProvincia())){
+                return true;
+            }
+        }
+        return false;
     }
 }
