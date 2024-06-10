@@ -33,6 +33,12 @@ public class RegionVitivinicola {
         this.nombre = nombre;
     }
 
+    public Integer getIdRegion() {
+        return idRegion;
+    }
+    public void setIdRegion(Integer idRegion) {
+        this.idRegion = idRegion;
+    }
 
     public Provincia obtProvincia() {
         List<Provincia> provincias = ProvinciaRepositoryHolder.getProvinciaRepository().findAll();
@@ -57,6 +63,5 @@ public class RegionVitivinicola {
     public int hashCode() {
         return Objects.hash(idRegion, nombre);
     }
-
     
 }

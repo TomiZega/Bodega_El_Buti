@@ -4,6 +4,7 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Date;
@@ -101,28 +102,22 @@ public class GestorGenerarReporteRankingVinos {
     @GetMapping("/calificar-vinos")
     public ResponseEntity<InputStreamResource> tomarConfirmacion() {
         byte[] reportBytes = calificarVinos();
-        if(this.tipoVisualizacionSelec =="Excel" && this.tipoResenaSelec!= null){
-            // Send the generated file as a response
+        if ("Excel".equals(tipoVisualizacionSelec) && tipoResenaSelec != null) {
             try {
-                // Convert report content to InputStreamResource
                 InputStreamResource resource = new InputStreamResource(new ByteArrayInputStream(reportBytes));
-    
-                // Set up response headers
                 HttpHeaders headers = new HttpHeaders();
                 headers.add("Content-Disposition", "attachment; filename=RankingVinos.xlsx");
-    
-                // Return the file as a response
-                return ResponseEntity
-                        .ok()
+                return ResponseEntity.ok()
                         .headers(headers)
-                        .contentType(MediaType
-                                .parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
+                        .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"))
                         .body(resource);
             } catch (Exception e) {
                 e.printStackTrace();
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
             }
-        } else{ return null;}
+        } else {
+            return ResponseEntity.badRequest().build();
+        }
     }
 
     // 18
@@ -167,8 +162,7 @@ public class GestorGenerarReporteRankingVinos {
     
             // Create header row
             Row headerRow = sheet.createRow(0);
-            String[] headers = { "Nombre", "Precio", "Calificación", "Porcentaje Composición", "Región", "Provincia",
-                    "País" };
+            String[] headers = { "Nombre", "Precio", "Calificación", "Porcentaje Composición", "Región", "Provincia", "País" };
             for (int i = 0; i < headers.length; i++) {
                 Cell cell = headerRow.createCell(i);
                 cell.setCellValue(headers[i]);
@@ -180,7 +174,10 @@ public class GestorGenerarReporteRankingVinos {
                 Row row = sheet.createRow(rowNum++);
                 String[] datosVino = vino.mostrarDatosDelVino().split(",");
                 String[] ubicacionVino = vino.mostrarUbicacionVino().split(",");
-
+    
+                System.out.println("Datos del Vino: " + Arrays.toString(datosVino));
+                System.out.println("Ubicación del Vino: " + Arrays.toString(ubicacionVino));
+    
                 for (int i = 0; i < datosVino.length; i++) {
                     row.createCell(i).setCellValue(datosVino[i]);
                 }
@@ -196,12 +193,19 @@ public class GestorGenerarReporteRankingVinos {
     
             // Write the workbook data to ByteArrayOutputStream
             workbook.write(out);
-            return out.toByteArray();
+            byte[] byteArray = out.toByteArray();
+            
+            // Debug: Check the size of the byte array
+            System.out.println("Generated report size: " + byteArray.length + " bytes");
+    
+            return byteArray;
         } catch (IOException e) {
             e.printStackTrace();
             return new byte[0];
         }
     }
+    
+
     
     
 

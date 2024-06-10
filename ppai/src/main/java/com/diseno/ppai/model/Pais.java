@@ -1,6 +1,7 @@
 package com.diseno.ppai.model;
 
 import java.util.List;
+import java.util.Objects;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -48,7 +49,7 @@ public class Pais {
 
     public boolean esDeProvincia(Provincia provincia){
         for (Provincia provinciaPais : provincias) {
-            if(provincia.getIdProvincia().equals(provinciaPais.getIdProvincia())){
+            if(Objects.equals(provincia.getIdProvincia(),provinciaPais.getIdProvincia())){
                 return true;
             }
         }

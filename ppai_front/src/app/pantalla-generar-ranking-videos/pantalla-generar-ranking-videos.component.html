@@ -1,11 +1,8 @@
 <div>
-    <header *ngIf="!pantallaHabilitada">
-      <nav>
-        <span>Vinos</span>
-        <button (click)="selecGenerarRankingVinos()">Generar Ranking Vinos</button>
-      </nav>
-    </header>
-  
+    <div *ngIf="!pantallaHabilitada">
+      <button (click)="selecGenerarRankingVinos()">Generar Ranking Vinos</button>
+    </div>
+      
     <div *ngIf="pantallaHabilitada">
       <div *ngIf="seccionFechas && !seccionTipoResena">
         <h3>Seleccionar Fechas</h3>

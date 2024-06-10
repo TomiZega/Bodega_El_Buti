@@ -91,6 +91,8 @@ export class PantallaGenerarRankingVideosComponent{
         error: error => { console.error('Error:', error); }
       });
   }
+  
+
   informarGeneracionExitosa() {
     window.alert("Reporte generado correctamente!");
     this.http.get('http://localhost:8080/fin-cu');

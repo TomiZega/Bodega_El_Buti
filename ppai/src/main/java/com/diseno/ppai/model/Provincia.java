@@ -1,6 +1,7 @@
 package com.diseno.ppai.model;
 
 import java.util.List;
+import java.util.Objects;
 
 import com.diseno.ppai.repository.PaisRepositoryHolder;
 
@@ -50,7 +51,7 @@ public class Provincia {
 
     public boolean esDeRegion(RegionVitivinicola region){
         for (RegionVitivinicola regionVitivinicola : regiones) {
-            if (region.equals(regionVitivinicola)){
+            if (Objects.equals(region.getIdRegion(),regionVitivinicola.getIdRegion())){
                 return true;
             }
         }
