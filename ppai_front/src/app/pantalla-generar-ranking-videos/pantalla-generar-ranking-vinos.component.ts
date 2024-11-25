@@ -2,11 +2,11 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'pantalla-ranking-videos',
-  templateUrl: './pantalla-generar-ranking-videos.component.html',
-  styleUrls: ['./pantalla-generar-ranking-videos.component.css']
+  selector: 'pantalla-ranking-vinos',
+  templateUrl: './pantalla-generar-ranking-vinos.component.html',
+  styleUrls: ['./pantalla-generar-ranking-vinos.component.css']
 })
-export class PantallaGenerarRankingVideosComponent{
+export class PantallaGenerarRankingVinosComponent{
   fechaDesde: string;
   fechaHasta: string;
   tiposResenas: string[]= ["Reseñas normales", "Reseñas de Sommelier", "Reseñas de Amigos"];

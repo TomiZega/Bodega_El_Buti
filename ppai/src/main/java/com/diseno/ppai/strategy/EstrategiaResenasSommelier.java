@@ -10,7 +10,7 @@ import com.diseno.ppai.model.Resena;
 import com.diseno.ppai.model.Vino;
 
 public class EstrategiaResenasSommelier implements IEstrategia {
-
+    @Override
     public List<Resena> obtResenasValidas(Vino vino, Date fechaInicio, Date fechaFin) {
         List<Resena> resenasValidas = new ArrayList<Resena>();
         for (Resena resena : vino.getResenas()) {
@@ -21,6 +21,7 @@ public class EstrategiaResenasSommelier implements IEstrategia {
         return resenasValidas;
     }
 
+    @Override
     public String obtPuntajeVino(Vino vino, List<Resena> resenas) {
         return vino.mostrarPuntajeAcumulado(resenas).toString();
     }
